@@ -1,0 +1,17 @@
+md-card {
+  width: 50%;
+  margin: 72px auto;
+  max-width: 720px;
+  padding: 48px 24px;
+  div {
+    padding: 0 8px;
+  }
+}
+
+#actions {
+  text-align: right;
+}
+
+:host /deep/ .mat-select-trigger {
+  height: 39px;
+}

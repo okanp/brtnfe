@@ -1,0 +1,115 @@
+.mat-card-content {
+  // padding: 16px;
+}
+
+#build-container {
+  max-width: 960px;
+  margin: 64px auto;
+}
+
+md-toolbar {
+  margin-bottom: 24px;
+}
+
+// dragula grabbing style
+.gu-mirror {
+  opacity: 0;
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+#routine-days {
+  width: 100%;
+  flex-wrap: wrap;
+  vertical-align: middle !important;
+  >div {
+    background-color: #3949ab;
+    margin: 8px;
+    padding: 8px;
+  }
+  .routine-day-container {
+    box-shadow: 0px 2px 5px 0 rgba(52, 47, 51, 0.63);
+    opacity: 0.9;
+    color: #fff;
+    text-align: left;
+    position: relative;
+    .routine-day-remove {
+      cursor: pointer;
+      position: absolute;
+      right: 4px;
+      top: -8px;
+    }
+    .routine-day-name {
+      width: calc(100% - 16px);
+      background-color: rgba(white, 0.5);
+      border-radius: 2px;
+      margin: 8px 0;
+      input {
+        text-align: center!important;
+        color: black;
+      }
+    }
+    .routine-days-exercises {
+      cursor: grab;
+      min-height: 100px;
+      >div {
+        position: relative;
+      }
+      .exercise-name, {
+        width: calc(75% - 24px);
+        display: inline-block;
+      }
+      .exercise-rep {
+        width: calc(25% - 12px);
+        display: inline-block;
+      }
+      >div:nth-child(odd) {
+        background-color: rgba(1, 1, 0, 0.2);
+      }
+      .routine-day-exercise-tools {
+        cursor: pointer;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        p {
+          display: inline;
+          margin: 0!important;
+        }
+      }
+    }
+    .routine-days-add-exercise {
+      text-align: center!important;
+      button {
+        width: 100%;
+      }
+    }
+  }
+  #routine-add-day {
+    border-style: dashed;
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: brown;
+    background-color: rgba(white, 0.2)!important;
+    cursor: pointer;
+    div {
+      width: 100%;
+      height: 100%;
+      display: table;
+      p {
+        text-align: center;
+        color: rgba(brown, 0.5);
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+#routine-privacy {
+  display:table;
+  >md-slide-toggle {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,56 @@
+# Frontpage
+01.  Search Categories ----------------------------HIGH PRIORITY----------------------------- 
+DONE Search bar theme fix 
+DONE Click tags to search 
+DONE Category Picker Active Display 
+05. Pagination 
+DONE Number of starts, comments, upvotes 
+07. Colorize search results
+08. Limit icons with 3. (Level,  Bro-split, weekly workout)
+
+# CreateOwnRoutine 
+O1. Tinymce integration
+DONE 02. Change name controls to id controls
+CANC 03. Set x Rep = 5 character set &nbsp
+04. Cover picture ----------------------------HIGH PRIORITY----------------------------- 
+DONE 05. See description note for 3x5*
+DONE 06. Routine length (12 weeks)
+DONE 07. Add nutrition plan
+08. Hashtags
+DONE Edit Routine
+10. Supersets
+11. Seperate Leg/Shoulder/Chest workouts
+
+# RoutinePage
+01. Comments Section
+DONE 02. Upvote, downvote button 
+DONE 03. Display icons for intermediate program, fat-burn program
+04. Png export/pdf export
+05. Instagram/fb/twitter/share
+DONE 06. Fork and favorite
+
+# General
+01. Change font 
+02. Change logo
+03. Emolji
+
+# Toolbar
+DONE 01. Converto to flexLayout
+O2. User Menu ----------------------------HIGH PRIORITY----------------------------- 
+
+# Login & Signup
+01. Login
+02. Register
+
+# Github
+01. Create repo
+
+
+SCHEDULE
+28 FEB FRONTEND 025% BACKEND 000%
+
+28 MAR FRONTEND 100% BACKEND 000%
+
+14 APR FRONTEND 100% BACKEND 100%
+
+23 APR LIVE

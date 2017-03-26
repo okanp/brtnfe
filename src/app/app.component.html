@@ -1,0 +1,71 @@
+<div id="toolbar-wrapper" style="height:64px;">
+  <div id="toolbar" style="height:64px;">
+    <div id="logo-container" [routerLink]="['/']">
+      <md-icon  id="menu-button" fxShow="true" fxHide.gt-xs class="toolbar-icon" (click)="sidenav.toggle()">menu</md-icon>
+      <img fxShow="false" fxShow.gt-xs src="../assets/img/arm.svg" style="width:32px;height:32px;">
+      <span fxShow="false" fxShow.gt-xs>broutine</span>
+    </div>
+    <div id="middle-container" fxHide fxShow.gt-xs>
+      <md-input-container class="search-container" dividerColor="accent" [ngClass]="{'white': isFocussed, 'white-low-alpha': !isFocussed}" floatPlaceholder="never">
+        <md-placeholder>
+          <i class="fa fa-search" aria-hidden="true"></i>Find a routine for yourself?
+        </md-placeholder>
+        <input mdInput (focus)="onFocusSearch()" (blur)="onBlurSearch()" (keyup.enter)="search($event)" [(ngModel)]="searchKey">
+      </md-input-container>
+    </div>
+    <div fxHide="true" fxShow.gt-xs id="right-container">
+      <button md-raised-button color="accent" [routerLink]="['/build']">
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i><span>&nbsp;New Routine</span>
+      </button>
+      <button md-button [routerLink]="['/login']">
+        Login
+      </button>
+    </div>
+    <div fxShow="true" fxHide.gt-xs id="right-container">
+      <md-input-container class="search-container" fxShow="{{isFocussed}}" dividerColor="accent" [ngClass]="{'white': isFocussed, 'white-low-alpha': !isFocussed}" floatPlaceholder="never">
+        <md-placeholder>
+          <i class="fa fa-search" aria-hidden="true"></i>Find a routine for yourself?
+        </md-placeholder>
+        <input #searchbox mdInput (focus)="onFocusSearch()" (blur)="onBlurSearch()" (keyup.enter)="search($event)" [(ngModel)]="searchKey">
+      </md-input-container>
+      <button md-icon-button fxHide="{{isFocussed}}" (click)="onClickToggleSearchBox()">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+      <button md-icon-button [routerLink]="['/build']">
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<app-criteria></app-criteria>
+<md-sidenav-container>
+  <md-sidenav #sidenav>
+    <app-user-menu id="menu" (toggled)="onSideNavToggled($event)"#menu></app-user-menu>
+  </md-sidenav>
+  <router-outlet style="position:absolute;top:64px;"></router-outlet>
+</md-sidenav-container>
+
+<!--<div id="toolbar-wrapper" style="height:64px;">
+  <md-toolbar fxLayout="row" id="toolbar" style="height:64px;">
+    <div fxFlex fxLayout="row" id="logo-container" [routerLink]="['/']">
+      <img fxFlex src="../assets/img/arm.svg" style="width:32px;height:32px;">
+      <p  fxFlex fxShow="false" fxShow.gt-xs>broutine</p>
+    </div>
+    <div fxFlex id="middle-container">
+      <button color="accent" md-raised-button [routerLink]="['/build']">
+        <md-icon>add</md-icon>Create Your Own Routine
+      </button>
+      <md-input-container dividerColor="accent" [ngClass]="{'white': isFocussed, 'white-low-alpha': !isFocussed}" floatPlaceholder="never">
+        <md-placeholder>
+          <md-icon color="accent">search</md-icon>
+        </md-placeholder>
+        <input mdInput (focus)="onFocusSearch()" (blur)="onBlurSearch()" (keyup.enter)="search($event)" [(ngModel)]="searchKey">
+      </md-input-container>
+    </div>
+    <div fxFlex id="right-container">
+      <button md-button>
+        Login
+      </button>
+    </div>
+  </md-toolbar>
+</div>-->

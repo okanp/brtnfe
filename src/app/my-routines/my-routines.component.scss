@@ -1,0 +1,62 @@
+ .select-circle:hover .circle {
+  opacity: 0;
+  z-index: 0;
+}
+
+.first-letter-only {
+  color: white;
+  line-height: 32px;
+}
+
+.table-buttons-div {
+  vertical-align: middle;
+  text-align: left;
+  visibility: hidden;
+}
+
+.table-row:hover .table-buttons-div {
+  visibility: visible;
+}
+
+#header-row {
+  height: 50px;
+  display: none;
+}
+
+.header-col-empty {
+  width: 75px;
+  vertical-align: middle;
+}
+
+.header-col {
+  text-align: left;
+  vertical-align: middle;
+}
+
+.header-col p:first-letter {
+  text-transform: uppercase;
+}
+
+.table-row {
+  height: 50px;
+  width: 100%;
+}
+
+.table-column {
+  vertical-align: middle;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 20%;
+  max-width: 200px;
+  padding: 0 4px;
+}
+
+.table-buttons-div md-icon {
+  color: gray;
+}
+
+#routines {
+  padding: 48px 24px;
+}

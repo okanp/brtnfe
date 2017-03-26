@@ -1,0 +1,37 @@
+<div id="search-criteria-box" [ngClass]="{'zero-heigth': !searchFocussed}">
+  <div fxLayout="column">
+    <div class="criteria-wrapper" fxFlex>
+      <md-select multiple placeholder="Level">
+        <md-option *ngFor="let item of level" [value]="item.value">
+          {{ item.view }}
+        </md-option>
+      </md-select>
+    </div>
+    <div class="criteria-wrapper" fxFlex>
+      <md-select multiple placeholder="Purpose">
+        <md-option *ngFor="let item of purpose" [value]="item.value">
+          {{ item.view }}
+        </md-option>
+      </md-select>
+    </div>
+    <div class="criteria-wrapper" fxFlex>
+      <md-input-container class="days">
+        <input mdInput placeholder="Min. Number Of Workouts Per Week">
+      </md-input-container>
+      <md-input-container class="days">
+        <input mdInput placeholder="Max. Number Of Workouts Per Week">
+      </md-input-container>
+    </div>
+    <div class="criteria-wrapper" fxFlex>
+      <md-select multiple placeholder="Type">
+        <md-option *ngFor="let item of type" [value]="item.value">
+          {{ item.view }}
+        </md-option>
+      </md-select>
+    </div>
+  </div>
+  
+  <div id="search-criteria-action">
+    <button md-raised-button>Search</button>
+  </div>
+</div>

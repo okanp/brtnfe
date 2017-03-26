@@ -1,0 +1,52 @@
+<md-card>
+  <div>
+    <md-input-container style="width:100%">
+      <input mdInput placeholder="Username">
+    </md-input-container>
+  </div>
+  <div>
+    <md-input-container style="width:100%">
+      <input type="password" mdInput placeholder="Password">
+    </md-input-container>
+  </div>
+  <div>
+    <md-input-container style="width:100%">
+      <input type="password" mdInput placeholder="Confirm Password">
+    </md-input-container>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+    <div fxFlex>
+      <md-input-container style="width:100%">
+        <input mdInput placeholder="First Name">
+      </md-input-container>
+    </div>
+    <div fxFlex>
+      <md-input-container style="width:100%">
+        <input mdInput placeholder="Last Name">
+      </md-input-container>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+    <div fxFlex>
+      <md-select placeholder="Gender" style="width:100%">
+        <md-option *ngFor="let gender of genders" [value]="gender.value">
+          {{ gender.view }}
+        </md-option>
+      </md-select>
+    </div>
+    <div fxFlex>
+      <md-input-container style="width:100%">
+        <input mdInput placeholder="Height in cms">
+      </md-input-container>
+    </div>
+    <div fxFlex>
+      <md-input-container style="width:100%">
+        <input mdInput placeholder="Weight in kgs">
+      </md-input-container>
+    </div>
+  </div>
+  <div id="actions">
+    <button md-raised-button color="accent">Signup</button>
+  </div>
+
+</md-card>

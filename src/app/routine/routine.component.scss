@@ -1,0 +1,118 @@
+#routine-container {
+  max-width: 960px;
+  margin: auto;
+}
+
+#routine-header {
+  text-align: center;
+  margin: 24px;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("../../assets/img/weights.jpeg");
+  /* Full height */
+  height: 300px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  position: relative;
+}
+
+#routine-header {
+  width: 100%;
+  height: 64px;
+  z-index: 2;
+  margin: 0;
+  background: #5fcf80;
+  padding-left: 80px;
+  display: flex;
+  .routine-votes {
+    position: absolute;
+    left: 0px;
+    width: 80px;
+    padding-left:24px;
+    color: white;
+    display: flex;
+    align-items: center;
+    .routine-vote-arrows {
+      display: block;
+      .arrow {
+        cursor: pointer;
+      }
+    }
+  }
+  .buttons-wrapper {
+    float: right;
+  }
+}
+
+#routine-summary {
+  margin: auto;
+  i {
+    padding: 0 4px;
+  }
+}
+
+  :host /deep/ .mat-toolbar-row {
+  display: flex!important;
+  justify-content: space-between!important;
+  height: 64px;
+}
+
+.routine-header-static {
+  top: 364px;
+}
+
+.routine-header-fixed {
+  position: fixed;
+  top: 64px;
+}
+
+#routine-days {
+  width: 100%;
+  flex-wrap: wrap;
+  vertical-align: middle !important;
+  >div {
+    background-color: rgb(87, 99, 102); //#3949ab;
+    margin: 8px;
+    padding: 8px;
+  }
+  .routine-day-container {
+    box-shadow: 0px 2px 5px 0 rgba(52, 47, 51, 0.63);
+    opacity: 0.9;
+    color: #fff;
+    text-align: left;
+    position: relative;
+    .routine-day-name {
+      text-align: center;
+    }
+    .routine-days-exercises-wrapper {
+      div {
+        display: flex;
+        justify-content: space-between;
+      }
+      >div:nth-child(odd) {
+        background-color: rgba(1, 1, 0, 0.2);
+      }
+    }
+  }
+}
+
+.routine-tags {
+  cursor: pointer;
+  p {
+    display: inline !important;
+    background: rgba(deepskyblue, 0.15);
+    border-radius: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.2);
+    margin: 0 4px;
+  }
+}
+
+md-card-title {
+  text-align: center;
+}

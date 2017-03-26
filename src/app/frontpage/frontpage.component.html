@@ -1,0 +1,57 @@
+<div id="frontpage-container">
+  <div id="search-criteria">
+    <!--<h3> <span>test:ok<i class="fa fa-times" aria-hidden="true"></i></span><span>test:ok</span></h3>
+  </div>
+  <div id="search-criteria-pop">
+    <div>
+    </div>-->
+  </div>
+  <div id="frontpage-list">
+    <div class="routine-list" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+      <div class="routine-list-item" *ngFor="let item of items; let i = index; " fxFlex="30%">
+        <div class="list-header" [ngStyle]="{'background-color':colors.header[i%colors.header.length]}">
+          <div class="routine-name">
+            <p [routerLink]="['/routine', item.id]">{{item.name}}</p>
+          </div>
+          <div class="routine-star">
+            <p><i class="fa fa-star-o" aria-hidden="true"></i>{{item.starred}}</p>
+          </div>
+        </div>
+        <div class="routine-votes">
+          <div class="arrow" (click)="onClickUpvote(item)"><i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+          <div>{{item.upvoted}}</div>
+          <div class="arrow" (click)="onClickDownvote(item)"><i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+        </div>
+        <div class="routine-desc">{{item.desc}}</div>
+        <div class="routine-summary">
+          <div md-tooltip="Workout routine can be completed in {{item.length}} weeks">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+          </div>
+          <div md-tooltip="That workout routine is recommended for {{item.level}}s">
+            <i class="fa fa-user-o" aria-hidden="true"></i>
+          </div>
+          <div md-tooltip="{{item.workoutsweekly}} workouts are recommended weekly">
+            <i class="fa fa-calendar-o" aria-hidden="true"></i>
+          </div>
+          <div md-tooltip="Workout routine is {{item.type}}">
+            <i class="fa fa-male" aria-hidden="true"></i>
+          </div>
+          <div md-tooltip="Purpose of the that workout routine is {{item.purpose}}">
+            <i class="fa fa-trophy" aria-hidden="true"></i>
+          </div>
+          <div *ngIf="item.nutrition" md-tooltip="Nutrition plan is included">
+            <i class="fa fa-cutlery" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="routine-action" [ngStyle]="{'background-color':colors.action[i%colors.action.length]}">
+          <div class="routine-comment">
+            <p><i class="fa fa-comment-o" aria-hidden="true"></i>{{item.commented}} comments</p>
+          </div>
+          <div class="routine-explore">
+            <button md-raised-button>Explore</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

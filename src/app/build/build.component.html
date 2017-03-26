@@ -1,0 +1,109 @@
+<div id="build-container">
+  <md-card>
+    <md-toolbar *ngIf="!routine.name" color="accent">Create Your Own Routine!</md-toolbar>
+    <md-toolbar *ngIf="routine.name" color="accent">{{routine.name}}</md-toolbar>
+    <md-card-content>
+      <table style="width: 100%" cellspacing="0">
+        <tr>
+          <td>
+            <md-input-container style="width: 100%" dividerColor="accent">
+              <input #routinename mdInput [(ngModel)]="routine.name" placeholder="Accent Color" type="text" placeholder="Routine Name">
+            </md-input-container>
+          </td>
+        </tr>
+      </table>
+      <div>
+        <md-input-container style="width:100%">
+          <textarea mdInput mdTextareaAutosize placeholder="Description" value="{{routine.desc}}" name="routine.desc"></textarea>
+        </md-input-container>
+      </div>
+      <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+        <div fxFlex>
+          <md-input-container style="width:100%">
+            <input mdInput placeholder="Level" value="{{routine.level}}" name="routine.level">
+          </md-input-container>
+        </div>
+        <div fxFlex>
+          <md-input-container style="width:100%">
+            <input mdInput placeholder="Purpose" value="{{routine.purpose}}" name="routine.purpose">
+          </md-input-container>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+        <div fxFlex>
+          <md-input-container style="width:100%">
+            <input mdInput placeholder="Weekly workouts" value="{{routine.workoutsweekly}}" name="routine.workoutsweekly">
+          </md-input-container>
+        </div>
+        <div fxFlex>
+          <md-input-container style="width:100%">
+            <input mdInput placeholder="Routine length (in weeks)" value="{{routine.length}}" name="routine.length">
+          </md-input-container>
+        </div>
+      </div>
+      <div>
+        <md-input-container style="width:100%">
+          <textarea mdInput placeholder="Nutrition Plan" value="{{routine.nutrition}}" name="routine.nutrition"></textarea>
+        </md-input-container>
+      </div>
+      <div>
+        <md-input-container style="width:100%">
+          <textarea mdInput placeholder="Tags" value="{{routine.tags}}" name="routine.tags"></textarea>
+        </md-input-container>
+      </div>
+      <div id="routine-days" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+        <div class="routine-day-container" fxFlex="30%" *ngFor="let day of routine.days">
+          <div class="routine-day-remove" (click)="onClickRemoveDay(day.id)">
+            <p><i class="fa fa-times" aria-hidden="true"></i></p>
+          </div>
+          <md-input-container class="routine-day-name" floatPlaceholder="never">
+            <input mdInput placeholder="&nbsp;Name of the Day" value="{{day.name}}" name="day.name">
+          </md-input-container>
+          <div class="routine-days-exercises" [dragula]='"first-bag"'>
+            <div *ngFor="let exercise of day.exercises">
+              <div class="routine-day-exercise-tools">
+                <p (click)="onClickEditExercise(day, exercise)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
+                <p (click)="onClickRemoveExercise(day, exercise)"><i class="fa fa-times" aria-hidden="true"></i></p>
+              </div>
+              <div class="exercise-name">{{exercise.name}}</div>
+              <div class="exercise-rep">
+                {{exercise.sets}}
+                <span>x</span> {{exercise.repeat}}
+                <span *ngIf="exercise.asterisk" md-tooltip="to see a tooltip">*
+               </span>
+              </div>
+            </div>
+          </div>
+          <div class="routine-days-add-exercise">
+            <button md-button (click)="openAddExercise(day)">
+              <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Exercise
+            </button>
+          </div>
+        </div>
+        <div *ngIf="routine.days.length < 14" id="routine-add-day" fxFlex="30%">
+          <div (click)="onClickAddDay()">
+            <p><i class="fa fa-plus" aria-hidden="true"></i>Add new workout</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <md-input-container style="width:100%">
+          <textarea mdInput placeholder="Spotify Playlist URL"></textarea>
+        </md-input-container>
+      </div>
+
+      <div id="routine-privacy">
+        <md-slide-toggle [(ngModel)]="routine.public">
+          <span *ngIf="routine.public">Public</span>
+          <span *ngIf="!routine.public">Unlisted</span>
+        </md-slide-toggle>
+      </div>
+    </md-card-content>
+    <md-card-actions>
+      <button md-raised-button color="accent" style="float:right;">Save</button>
+    </md-card-actions>
+    <div>
+
+    </div>
+  </md-card>
+</div>

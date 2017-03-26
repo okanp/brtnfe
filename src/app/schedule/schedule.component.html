@@ -1,0 +1,54 @@
+<div id="schedule-container" >
+  <div id="schedule-background">
+    <div class="schedule-background-row-odd">
+      <p>MONDAY</p>
+    </div>
+    <div class="schedule-background-row-even">
+      <p>TUESDAY</p>
+    </div>
+    <div class="schedule-background-row-odd">
+      <p>WEDNESDAY</p>
+    </div>
+    <div class="schedule-background-row-even">
+      <p>THURSDAY</p>
+    </div>
+    <div class="schedule-background-row-odd">
+      <p>FRIDAY</p>
+    </div>
+    <div class="schedule-background-row-even">
+      <p>SATURDAY</p>
+    </div>
+    <div class="schedule-background-row-odd">
+      <p>SUNDAY</p>
+    </div>
+  </div>
+  <div id="schedule" [dragula]='"bag-one"'> 
+    <div class="schedule-row">1</div>
+    <div class="schedule-row">2</div>
+    <div class="schedule-row">3</div>
+    <div class="schedule-row">4</div>
+    <div class="schedule-row">5</div>
+    <div class="schedule-row">6</div>
+    <div class="schedule-row">7</div>
+  </div>
+</div>
+
+
+<div class='parent'>
+    <label for='hy'>Move stuff between these two containers. Note how the stuff gets inserted near the mouse pointer?
+        Great stuff.</label>
+    <div class='wrapper'>
+        <div class='container' [dragula]='"first-bag"'>
+            <div>You can move these elements between these two containers</div>
+            <div>Moving them anywhere else isn't quite possible</div>
+            <div>There's also the possibility of moving elements around in the same container, changing their position
+            </div>
+        </div>
+        <div class='container' [dragula]='"second-bag"'>
+            <div>This is the default use case. You only need to specify the containers you want to use</div>
+            <div>More interactive use cases lie ahead</div>
+            <div>Make sure to check out the <a href='https://github.com/bevacqua/dragula#readme'>documentation on
+                GitHub!</a></div>
+        </div>
+    </div>
+</div>

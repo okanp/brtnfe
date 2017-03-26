@@ -1,0 +1,25 @@
+<!--<h2 md-dialog-title>New Exercise</h2>-->
+<md-dialog-content>
+  <div id="first-row">
+    <md-select [(ngModel)]="exercise.name" placeholder="Exercise" required>
+      <md-option *ngFor="let exercise of exercises" [value]="exercise.name"> {{ exercise.name }} </md-option>
+    </md-select>
+  </div>
+  <div id="second-row" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+    <md-input-container fxFlex>
+      <input mdInput [(ngModel)]="exercise.sets" placeholder="Sets" required>
+    </md-input-container>
+    <md-input-container fxFlex>
+      <input mdInput [(ngModel)]="exercise.repeat" placeholder="Repeat" required>
+    </md-input-container>
+  </div>
+  <div id="third-row">
+    <md-checkbox [(ngModel)]="exercise.asterisk">
+      Explanation in description
+    </md-checkbox>
+  </div>
+</md-dialog-content>
+<md-dialog-actions>
+  <button md-button>Cancel</button>
+  <button md-button (click)="dialogRef.close(exercise)">Save</button>
+</md-dialog-actions>

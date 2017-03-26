@@ -1,0 +1,79 @@
+$container-height: 630px;
+$container-width: 630px;
+
+$row-height: $container-height/7;
+
+.schedule-background-row {
+  width: 100%;
+  height: $row-height;
+  position: relative;
+  p {
+    margin: 0;
+    left: 5px;
+    top: 50%;
+    position: absolute;
+    font-size: 40px;
+  }
+}
+
+.schedule-row {
+  width: 100%;
+  height: $row-height;
+  position: relative;
+}
+
+.schedule-background-row-odd {
+  @extend .schedule-background-row;
+  background: #DDD;
+  color: white;
+}
+
+.schedule-background-row-even {
+  @extend .schedule-background-row;
+  background: white;
+  color: #DDD;
+}
+
+#schedule-container {
+  height: $container-height;
+  width: $container-width;
+  position: relative;
+}
+
+#schedule-background {
+  position:absolute;
+  height: inherit;
+  width: inherit;
+}
+
+
+.parent {
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 50px 0;
+  padding: 20px;
+}
+
+
+/* dragula-specific example page styles */
+.wrapper {
+  display: table;
+}
+.container {
+  display: table-cell;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 50%;
+}
+.container:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+// dragula grabbing style
+.gu-mirror {
+  margin: 10px;
+  padding: 10px;
+  background-color: rgba(1, 1, 0, 0.2);
+  transition: opacity 0.4s ease-in-out;
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}

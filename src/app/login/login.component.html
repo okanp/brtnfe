@@ -1,0 +1,22 @@
+<md-card>
+  <md-input-container>
+    <input mdInput placeholder="Email Address">
+  </md-input-container>
+  <md-input-container>
+    <input type="password" mdInput placeholder="Password">
+  </md-input-container>
+  <div id="login-wrapper">
+    <button md-raised-button color="accent" (click)="signin()">Log In</button>
+  </div>
+  <div id="fb-login-wrapper">
+    <p> OR </p>
+    <p>
+      <button md-raised-button color="primary" (click)="signin()">
+        <i class="fa fa-facebook" aria-hidden="true"></i>Facebook Login
+      </button>
+    </p>
+  </div>
+  <div id="signup-wrapper">
+    <span>Not a member yet? <a [routerLink]="['/signup']">Sign up</a> now!</span>
+  </div>
+</md-card>

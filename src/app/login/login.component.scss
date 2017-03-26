@@ -1,0 +1,28 @@
+md-card {
+  width: 50%;
+  margin: 72px auto;
+  max-width: 720px;
+  padding: 48px 24px;
+  md-input-container {
+    width: 100%;
+  }
+  div {
+    width: 100%;
+  }
+}
+
+#login-wrapper {
+  text-align: right;
+}
+
+#signup-wrapper {
+  font-size: small;
+}
+
+#fb-login-wrapper {
+  text-align: center;
+  i {
+    color: white;
+    padding-right: 8px;
+  }
+}

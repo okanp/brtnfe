@@ -1,0 +1,79 @@
+<div class="parallax">
+</div>
+<md-toolbar id="routine-header">
+  <div class="routine-votes">
+    <div class="routine-vote-arrows">
+      <div class="arrow" (click)="onClickUpvote(item)"><i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+      <div class="arrow" (click)="onClickDownvote(item)"><i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+    </div>
+    <div>{{routine.upvoted}}</div>
+  </div>
+  <div fxHide="true" fxShow.gt-xs>{{routine.name}}</div>
+  <div id="buttons-wrapper">
+    <button color="accent" md-raised-button (click)="onClickFork()"> 
+        <md-icon>edit</md-icon>&nbsp;Fork 
+      </button>
+    <button color="accent" md-raised-button (click)="onClickFavorite()">
+        <md-icon>star</md-icon>&nbsp;Favorite
+      </button>
+  </div>
+</md-toolbar>
+<div style="height:64px;width:100%;"></div>
+
+<md-card id="routine-container">
+  <md-card-title>{{routine.name}}</md-card-title>
+  <md-card-content>
+    <table id="routine-summary">
+      <tr>
+        <td md-tooltip="Workout routine can be completed in {{routine.length}} weeks">
+          <i class="fa fa-calendar" aria-hidden="true"></i>{{routine.length}} weeks
+        </td>
+        <td md-tooltip="That workout routine is recommended for {{routine.level}}s">
+          <i class="fa fa-user-o" aria-hidden="true"></i>{{routine.level}}
+        </td>
+        <td md-tooltip="{{routine.workoutsweekly}} workouts are recommended weekly">
+          <i class="fa fa-calendar-o" aria-hidden="true"></i>{{routine.workoutsweekly}} days/week
+        </td>
+        <td md-tooltip="Workout routine is {{routine.type}}">
+          <i class="fa fa-male" aria-hidden="true"></i>{{routine.type}}
+        </td>
+        <td md-tooltip="Purpose of the that workout routine is {{routine.purpose}}">
+          <i class="fa fa-trophy" aria-hidden="true"></i>{{routine.purpose}}
+        </td>
+      </tr>
+    </table>
+    <br>
+    <p>{{routine.desc}}</p>
+
+    <p>{{routine.desc}}</p>
+
+    <p>{{routine.desc}}</p>
+    <br>
+    <div md-line *ngIf="routine.tags" class="routine-tags">
+      <p *ngFor="let tag of routine.tags" (click)="onClickTag(routine)">
+        #{{tag}}
+      </p>
+    </div>
+    <br>
+
+    <div id="routine-days" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+      <div class="routine-day-container" fxFlex="31%" *ngFor="let day of routine.days">
+        <h3 class="routine-day-name">{{day.name}}</h3>
+        <div class="routine-days-exercises-wrapper">
+          <div *ngFor="let exercise of day.exercises">
+            <div class="exercise-name">{{exercise.name}}</div>
+            <div class="exercise-rep">{{exercise.sets}} x {{exercise.repeat}} </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    
+    <iframe style="display:block;margin: 0 auto;" src="https://embed.spotify.com/?uri=spotify%3Auser%3Aspotify%3Aplaylist%3A37i9dQZEVXcMLoePKSu3Yp"
+      width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+
+  </md-card-content>
+</md-card>

@@ -1,0 +1,25 @@
+<table *ngIf="data" id="routines" width="100%">
+  <thead>
+    <tr id="header-row">
+      <th class="header-col-empty">
+      </th>
+      <th *ngFor="let col of cols;" class="header-col;">
+        <p>{{col}}</p>
+      </th>
+      <th class="empty-header-col">
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-row" *ngFor="let item of data; let ndx = index" [id]="'table-row-'+ndx">
+      <td *ngFor="let col of cols;" class="table-column">
+        {{item[col]}}
+      </td>
+      <td class="table-buttons-div">
+        <button md-icon-button>
+          <md-icon></md-icon>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
