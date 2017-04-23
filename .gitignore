@@ -43,3 +43,4 @@ Thumbs.db
 /.history
 .editorconfig
 .vscode/
+src/app/shared/sdk
