@@ -1,8 +1,18 @@
+<div id="cover-picture" class="parallax" (click)="onClickUploadFilebutton()">
+  <div class="add-a-photo-container">
+    <md-icon>add_a_photo</md-icon>
+    <div>Upload a cover picture</div>
+  </div>
+</div>
+<md-toolbar id="routine-header">
+  <div>{{routine.name}}</div>
+</md-toolbar>
+<div style="height:64px;width:100%;"></div>
+
 <div id="build-container">
   <md-card>
-    <md-toolbar *ngIf="!routine.name" color="accent">Create Your Own Routine!</md-toolbar>
-    <md-toolbar *ngIf="routine.name" color="accent">{{routine.name}}</md-toolbar>
     <md-card-content>
+      <input #uploadButton style="display:none" type="file" (change)="previewImage($event.target)" accept="image/gif,image/jpeg,image/jpg,image/png">
       <table style="width: 100%" cellspacing="0">
         <tr>
           <td>

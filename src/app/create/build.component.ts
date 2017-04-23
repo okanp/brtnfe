@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild, Renderer } from "@angular/core";
 import * as _ from "lodash";
 import { RoutineService } from "../services/routine.service";
 import { Routine } from "../models/routine.model";
@@ -16,13 +16,14 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class BuildComponent implements OnInit {
   routine: Routine = new Routine();
   addExerciseDialogRef: MdDialogRef<AddExerciseComponent>;
+  @ViewChild("uploadButton") uploadFileButton;
 
-  constructor(private serv: RoutineService, public dialog: MdDialog, private route: ActivatedRoute) { }
+  constructor(private serv: RoutineService, public dialog: MdDialog, private route: ActivatedRoute, private renderer: Renderer) { }
 
   ngOnInit() {
     const self = this;
     self.route.params.subscribe(params => {
-      let rid = params["id"]; // (+) converts string 'id' to a number
+      const rid = params["id"]; // (+) converts string 'id' to a number
       if (rid) {
         self.serv.getRoutine({ id: rid }).then(routine => {
           self.routine = routine;
@@ -46,7 +47,7 @@ export class BuildComponent implements OnInit {
 
   addExerciseToDay(exercise: Exercise, _day) {
     const self = this;
-    let rand = Math.floor((Math.random() * 1000000))
+    const rand = Math.floor((Math.random() * 1000000));
     _.each(self.routine.days, day => {
       if (day.id === _day.id) {
         exercise.id = "e" + rand;
@@ -58,7 +59,7 @@ export class BuildComponent implements OnInit {
 
   onClickAddDay() {
     const self = this;
-    let rand = Math.floor((Math.random() * 1000000))
+    const rand = Math.floor((Math.random() * 1000000));
     self.routine.days.push({
       id: "d" + rand,
       name: "",
@@ -107,6 +108,22 @@ export class BuildComponent implements OnInit {
         return false;
       }
     });
+  }
+
+  previewImage(input) {
+
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        $("#cover-picture").css("background-image", "url(" + e.target.result + ")");
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  onClickUploadFilebutton() {
+    const event = new MouseEvent("click", { bubbles: true });
+    this.renderer.invokeElementMethod(this.uploadFileButton.nativeElement, "dispatchEvent", [event]);
   }
 
 }

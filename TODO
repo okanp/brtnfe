@@ -12,7 +12,7 @@ DONE Number of starts, comments, upvotes
 O1. Tinymce integration
 DONE 02. Change name controls to id controls
 CANC 03. Set x Rep = 5 character set &nbsp
-04. Cover picture ----------------------------HIGH PRIORITY----------------------------- 
+DONE 04. Cover picture 
 DONE 05. See description note for 3x5*
 DONE 06. Routine length (12 weeks)
 DONE 07. Add nutrition plan
@@ -38,6 +38,9 @@ DONE 06. Fork and favorite
 DONE 01. Converto to flexLayout
 O2. User Menu 
 03. sinenav removal or its style on other pages  ----------------------------HIGH PRIORITY----------------------------- 
+
+# Backend ----------------------------HIGH PRIORITY----------------------------- 
+
 
 # Login & Signup
 01. Login

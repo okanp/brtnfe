@@ -12,7 +12,7 @@ import { AppComponent } from "./app.component";
 import { ScheduleComponent } from "./schedule/schedule.component";
 import { FrontpageComponent } from "./frontpage/frontpage.component";
 import { RoutineComponent } from "./routine/routine.component";
-import { BuildComponent } from "./build/build.component";
+import { BuildComponent } from "./create/build.component";
 import { UserMenuComponent } from "./user-menu/user-menu.component";
 import { CriteriaComponent } from "./criteria/criteria.component";
 import { LoginComponent } from "./login/login.component";
@@ -25,7 +25,7 @@ import { ExerciseService } from "./services/exercise.service";
 import { InternalService } from "./services/internal.service";
 
 // Dialogs [declarations, entryComponents]
-import { AddExerciseComponent } from "./build/add-exercise.dialog";
+import { AddExerciseComponent } from "./create/add-exercise.dialog";
 
 const appRoutes: Routes = [
   { path: "frontpage", component: FrontpageComponent },
