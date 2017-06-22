@@ -18,6 +18,7 @@ import { CriteriaComponent } from "./criteria/criteria.component";
 import { LoginComponent } from "./login/login.component";
 import { SignupComponent } from "./signup/signup.component";
 import { MyRoutinesComponent } from "./my-routines/my-routines.component";
+import { ToolbarComponent } from "./toolbar/toolbar.component";
 
 // Services [providers]
 import { RoutineService } from "./services/routine.service";
@@ -52,6 +53,7 @@ const appRoutes: Routes = [
     , LoginComponent
     , SignupComponent
     , MyRoutinesComponent
+    , ToolbarComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes)

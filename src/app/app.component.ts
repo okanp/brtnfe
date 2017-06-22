@@ -15,41 +15,19 @@ import * as _ from "lodash";
 export class AppComponent {
   @ViewChild(FrontpageComponent) frontpage: FrontpageComponent;
   @ViewChild(UserMenuComponent) menu: UserMenuComponent;
-  @ViewChild("searchbox") searchBox;
   @ViewChild("sidenav") sidenav;
 
-  isFocussed: boolean = false;
-  public searchKey: string;
-
-  constructor (private internalService: InternalService) {
-  }
-
-  onFocusSearch() {
-    const self = this;
-    self.isFocussed = true;
-    self.internalService.setFocussed(true);
-  }
-
-  onBlurSearch() {
-    const self = this;
-    self.isFocussed = false;
-    self.internalService.setFocussed(false);
-  }
-
-  onClickToggleSearchBox() {
-    const self = this;
-    self.isFocussed = true;
-    setTimeout(function(){
-      self.searchBox.nativeElement.focus();
-    }, 100);
+  constructor () {
   }
 
   onSideNavToggled(evt) {
     this.sidenav.toggle();
   }
 
-  search(evt) {
-    this.frontpage.search(this.searchKey);
+  search(key) {
+    console.log(key);
+    this.frontpage.search(key);
   }
+
 
 }
