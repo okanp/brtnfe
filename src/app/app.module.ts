@@ -19,6 +19,7 @@ import { LoginComponent } from "./login/login.component";
 import { SignupComponent } from "./signup/signup.component";
 import { MyRoutinesComponent } from "./my-routines/my-routines.component";
 import { ToolbarComponent } from "./toolbar/toolbar.component";
+import { SearchBarComponent } from "./search-bar/search-bar.component";
 
 // Services [providers]
 import { RoutineService } from "./services/routine.service";
@@ -54,6 +55,7 @@ const appRoutes: Routes = [
     , SignupComponent
     , MyRoutinesComponent
     , ToolbarComponent
+    , SearchBarComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes)
@@ -62,7 +64,7 @@ const appRoutes: Routes = [
     , HttpModule
     , MaterialModule
     , DragulaModule
-    , FlexLayoutModule.forRoot()
+    , FlexLayoutModule
   ],
   providers: [
       RoutineService

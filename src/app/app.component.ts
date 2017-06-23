@@ -24,10 +24,4 @@ export class AppComponent {
     this.sidenav.toggle();
   }
 
-  search(key) {
-    console.log(key);
-    this.frontpage.search(key);
-  }
-
-
 }

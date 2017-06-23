@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
 import { InternalService } from "../services/internal.service";
 
 @Component({
@@ -7,7 +7,10 @@ import { InternalService } from "../services/internal.service";
   templateUrl: "./criteria.component.html",
   styleUrls: ["./criteria.component.scss"]
 })
-export class CriteriaComponent implements OnInit {
+export class CriteriaComponent implements AfterViewInit {
+
+  @ViewChild("criteriabox") criteriabox;
+
   purpose = [
     {value: "fatburn", view: "Fat Burn"},
     {value: "strength", view: "Strength"},
@@ -41,6 +44,7 @@ export class CriteriaComponent implements OnInit {
 
   searchFocussed = false;
 
+
   constructor(private internalService: InternalService) {
     const self = this;
     self.internalService.getFocussed().subscribe( (val) => {
@@ -48,5 +52,6 @@ export class CriteriaComponent implements OnInit {
     });
   }
 
-  ngOnInit() { }
+  ngAfterViewInit() {
+  }
 }

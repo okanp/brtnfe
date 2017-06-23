@@ -1,17 +1,12 @@
 <div id="toolbar-wrapper" style="height:64px;">
   <div id="toolbar" style="height:64px;">
     <div id="logo-container" [routerLink]="['/']">
-      <md-icon  id="menu-button" fxShow="true" fxHide.gt-xs class="toolbar-icon" (click)="sidenav.toggle()">menu</md-icon>
+      <md-icon  id="menu-button" fxShow="true" fxHide.gt-xs class="toolbar-icon">menu</md-icon>
       <img fxShow="false" fxShow.gt-xs src="../assets/img/arm.svg" style="width:32px;height:32px;">
       <span fxShow="false" fxShow.gt-xs>broutine</span>
     </div>
-    <div id="middle-container" fxHide fxShow.gt-xs>
-      <md-input-container class="search-container" dividerColor="accent" [ngClass]="{'white': isFocussed, 'white-low-alpha': !isFocussed}" floatPlaceholder="never">
-        <md-placeholder>
-          <i class="fa fa-search" aria-hidden="true"></i>Find a routine for yourself?
-        </md-placeholder>
-        <input mdInput (focus)="onFocusSearch()" (blur)="onBlurSearch()" (keyup.enter)="search($event)" [(ngModel)]="searchKey">
-      </md-input-container>
+    <div id="middle-container" fxHide fxShow.xs="{{searchBoxDisplayed}}" fxShow.gt-xs>
+      <app-search-bar></app-search-bar>
     </div>
     <div fxHide="true" fxShow.gt-xs id="right-container">
       <button md-raised-button color="accent" [routerLink]="['/build']">
@@ -22,13 +17,7 @@
       </button>
     </div>
     <div fxShow="true" fxHide.gt-xs id="right-container">
-      <md-input-container class="search-container" fxShow="{{isFocussed}}" dividerColor="accent" [ngClass]="{'white': isFocussed, 'white-low-alpha': !isFocussed}" floatPlaceholder="never">
-        <md-placeholder>
-          <i class="fa fa-search" aria-hidden="true"></i>Find a routine for yourself?
-        </md-placeholder>
-        <input #searchbox mdInput (focus)="onFocusSearch()" (blur)="onBlurSearch()" (keyup.enter)="search($event)" [(ngModel)]="searchKey">
-      </md-input-container>
-      <button md-icon-button fxHide="{{isFocussed}}" (click)="onClickToggleSearchBox()">
+      <button md-icon-button (click)="onClickToggleSearchBox()">
         <i class="fa fa-search" aria-hidden="true"></i>
       </button>
       <button md-icon-button [routerLink]="['/build']">

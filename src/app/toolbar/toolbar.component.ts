@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, EventEmitter, Output } from "@angular/core";
 import { InternalService } from "../services/internal.service";
+import { UserMenuComponent } from "../user-menu/user-menu.component";
 
 @Component({
   selector: "app-toolbar",
@@ -8,38 +9,17 @@ import { InternalService } from "../services/internal.service";
 })
 export class ToolbarComponent implements OnInit {
 
-  isFocussed = false;
-  searchKey: string;
-  @Output("searchEvent") searchEvent: EventEmitter<string> = new EventEmitter();
-  @ViewChild("searchbox") searchBox;
+  searchBoxDisplayed = false;
 
   constructor(private internalService: InternalService) { }
 
   ngOnInit() {
-  }
-
-  onFocusSearch() {
     const self = this;
-    self.isFocussed = true;
-    self.internalService.setFocussed(true);
-  }
-
-  onBlurSearch() {
-    const self = this;
-    self.isFocussed = false;
-    self.internalService.setFocussed(false);
   }
 
   onClickToggleSearchBox() {
     const self = this;
-    self.isFocussed = true;
-    setTimeout(function(){
-      self.searchBox.nativeElement.focus();
-    }, 100);
-  }
-
-  search(evt) {
-    this.searchEvent.next(this.searchKey);
+    self.searchBoxDisplayed = !self.searchBoxDisplayed;
   }
 
 }

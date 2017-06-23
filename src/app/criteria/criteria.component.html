@@ -1,4 +1,4 @@
-<div id="search-criteria-box" [ngClass]="{'zero-heigth': !searchFocussed}">
+<div id="search-criteria-box" #criteriabox [ngClass]="{'zero-heigth': !searchFocussed}" class.gt-xs="fixed-width" class.xs="full-width">
   <div fxLayout="column">
     <div class="criteria-wrapper" fxFlex>
       <md-select multiple placeholder="Level">

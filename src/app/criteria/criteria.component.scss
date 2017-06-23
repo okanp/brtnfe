@@ -1,12 +1,22 @@
+$width-search: 400px;
+
 #search-criteria-box {
   margin: 0 auto;
   box-sizing: border-box;
-  width: 375px;
   background-color: rgb(87, 99, 102);
   border-radius: 2px;
   padding: 12px;
   position: absolute;
   z-index: 3;
+}
+
+.fixed-width{
+  width: $width-search;
+}
+
+.full-width {
+  left: 0;
+  width: 100%;
 }
 
 .zero-heigth {
