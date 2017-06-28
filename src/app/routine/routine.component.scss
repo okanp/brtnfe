@@ -1,6 +1,9 @@
 #routine-container {
   max-width: 960px;
   margin: auto;
+  md-card-content {
+    flex-direction: column;
+  }
 }
 
 #routine-header {

@@ -4,6 +4,9 @@
   max-width: 960px;
   margin: 0 auto;
   margin-bottom: 64px;
+  md-card-content {
+    flex-direction: column;
+  }
 }
 
 md-toolbar {
