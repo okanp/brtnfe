@@ -1,5 +1,6 @@
+
 # Frontpage
-01.  Search Categories ----------------------------HIGH PRIORITY----------------------------- 
+01.  Search Categories 
 DONE Search bar theme fix 
 DONE Click tags to search 
 DONE Category Picker Active Display 
@@ -37,10 +38,7 @@ DONE 06. Fork and favorite
 # Toolbar
 DONE 01. Converto to flexLayout
 O2. User Menu 
-03. sinenav removal or its style on other pages  ----------------------------HIGH PRIORITY----------------------------- 
-
-# Backend ----------------------------HIGH PRIORITY----------------------------- 
-
+03. sinenav removal or its style on other pages 
 
 # Login & Signup
 01. Login
@@ -50,11 +48,12 @@ O2. User Menu
 01. Create repo
 
 
-SCHEDULE
-28 FEB FRONTEND 025% BACKEND 000%
+SPRINT 01 (JULY10-JUL15) 
+# Frontpage 01. Search Categories 
+# CreateOwnRoutine 10. Supersets
+# Frontpage 01. 11. Seperate Leg/Shoulder/Chest workouts
 
-28 MAR FRONTEND 100% BACKEND 000%
-
-14 APR FRONTEND 100% BACKEND 100%
-
-23 APR LIVE
+SPRINT 02 (JULY17-JUL22) 
+# RoutinePage 01. Comments Section
+# Toolbar O2. User Menu 
+# Toolbar 03. sinenav removal or its style on other pages
