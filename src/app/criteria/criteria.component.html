@@ -1,14 +1,14 @@
-<div id="search-criteria-box" #criteriabox [ngClass]="{'zero-heigth': !searchFocussed}" class.gt-xs="fixed-width" class.xs="full-width">
+<div id="search-criteria-box" #criteriabox [ngClass] ="{'zero-height': !searchFocussed}" class.gt-xs="fixed-width" class.xs="full-width">
   <div fxLayout="column">
     <div class="criteria-wrapper" fxFlex>
-      <md-select multiple placeholder="Level">
+      <md-select placeholder="Level" [(ngModel)]="model.level">
         <md-option *ngFor="let item of level" [value]="item.value">
           {{ item.view }}
         </md-option>
       </md-select>
     </div>
     <div class="criteria-wrapper" fxFlex>
-      <md-select multiple placeholder="Purpose">
+      <md-select placeholder="Purpose" [(ngModel)]="model.purpose">
         <md-option *ngFor="let item of purpose" [value]="item.value">
           {{ item.view }}
         </md-option>
@@ -18,12 +18,12 @@
       <md-input-container class="days">
         <input mdInput placeholder="Min. Number Of Workouts Per Week">
       </md-input-container>
-      <md-input-container class="days">
+       <md-input-container class="days">
         <input mdInput placeholder="Max. Number Of Workouts Per Week">
-      </md-input-container>
+      </md-input-container> 
     </div>
     <div class="criteria-wrapper" fxFlex>
-      <md-select multiple placeholder="Type">
+      <md-select placeholder="Type" [(ngModel)]="model.type">
         <md-option *ngFor="let item of type" [value]="item.value">
           {{ item.view }}
         </md-option>
@@ -32,6 +32,7 @@
   </div>
   
   <div id="search-criteria-action">
-    <button md-raised-button>Search</button>
+    <button type="button" md-raised-button (click)="cancel()">Cancel</button>
+    <button type="submit" md-raised-button (click)="search()">Search</button>
   </div>
 </div>

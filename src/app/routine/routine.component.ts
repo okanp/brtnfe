@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from "@angular/router";
 import * as $ from "jquery";
 import { Routine } from "../models/routine.model";
 
-
 @Component({
   moduleId: module.id,
   selector: "app-routine",

@@ -23,6 +23,8 @@ export class Routine {
   type: string;
   level: string;
   workoutsweekly: number;
+  workoutsweeklyMin?: number;
+  workoutsweeklyMax?: number;
   constructor() {
     this.id = "";
     this.name = "";
