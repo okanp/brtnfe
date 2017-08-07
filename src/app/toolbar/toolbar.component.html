@@ -12,8 +12,11 @@
       <button md-raised-button color="accent" [routerLink]="['/build']">
         <i class="fa fa-pencil-square-o" aria-hidden="true"></i><span>&nbsp;New Routine</span>
       </button>
-      <button md-button [routerLink]="['/login']">
+      <button *ngIf="!loggedIn" md-button [routerLink]="['/login']">
         Login
+      </button>
+      <button *ngIf="loggedIn" md-button>
+        {{user.name}}
       </button>
     </div>
     <div fxShow="true" fxHide.gt-xs id="right-container">

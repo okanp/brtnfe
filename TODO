@@ -1,6 +1,6 @@
 
 # Frontpage
-01.  Search Categories 
+01.  Search Categories
 DONE Search bar theme fix 
 DONE Click tags to search 
 DONE Category Picker Active Display 
@@ -17,7 +17,7 @@ DONE 04. Cover picture
 DONE 05. See description note for 3x5*
 DONE 06. Routine length (12 weeks)
 DONE 07. Add nutrition plan
-08. Hashtags
+08. Hashtags (https://github.com/aehlke/tag-it)
 DONE Edit Routine
 10. Supersets
 11. Seperate Leg/Shoulder/Chest workouts
@@ -40,20 +40,16 @@ DONE 01. Converto to flexLayout
 O2. User Menu 
 03. sinenav removal or its style on other pages 
 
-# Login & Signup
-01. Login
-02. Register
 
-# Github
-01. Create repo
-
-
-SPRINT 01 (JULY10-JUL15) 
+SPRINT 01 
 # Frontpage 01. Search Categories 
 # CreateOwnRoutine 10. Supersets
 # Frontpage 01. 11. Seperate Leg/Shoulder/Chest workouts
 
-SPRINT 02 (JULY17-JUL22) 
+SPRINT 02 
 # RoutinePage 01. Comments Section
 # Toolbar O2. User Menu 
 # Toolbar 03. sinenav removal or its style on other pages
+DONE 03. sinenav removal or its style on other pages
+
+

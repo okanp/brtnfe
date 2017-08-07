@@ -13,21 +13,17 @@
   <md-card>
     <md-card-content>
       <input #uploadButton style="display:none" type="file" (change)="previewImage($event.target)" accept="image/gif,image/jpeg,image/jpg,image/png">
-      <table style="width: 100%" cellspacing="0">
-        <tr>
-          <td>
-            <md-input-container style="width: 100%" dividerColor="accent">
-              <input #routinename mdInput [(ngModel)]="routine.name" placeholder="Accent Color" type="text" placeholder="Routine Name">
-            </md-input-container>
-          </td>
-        </tr>
-      </table>
+      <div>
+          <md-input-container style="width: 100%">
+            <input #routinename mdInput [(ngModel)]="routine.name" placeholder="Accent Color" type="text" placeholder="Routine Name">
+          </md-input-container>
+      </div>
       <div>
         <md-input-container style="width:100%">
           <textarea mdInput mdTextareaAutosize placeholder="Description" value="{{routine.desc}}" name="routine.desc"></textarea>
         </md-input-container>
       </div>
-      <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+      <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
         <div fxFlex>
           <md-input-container style="width:100%">
             <input mdInput placeholder="Level" value="{{routine.level}}" name="routine.level">
@@ -39,7 +35,7 @@
           </md-input-container>
         </div>
       </div>
-      <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+       <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
         <div fxFlex>
           <md-input-container style="width:100%">
             <input mdInput placeholder="Weekly workouts" value="{{routine.workoutsweekly}}" name="routine.workoutsweekly">
@@ -60,8 +56,8 @@
         <md-input-container style="width:100%">
           <textarea mdInput placeholder="Tags" value="{{routine.tags}}" name="routine.tags"></textarea>
         </md-input-container>
-      </div>
-      <div id="routine-days" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+      </div> 
+       <div id="routine-days" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
         <div class="routine-day-container" fxFlex="30%" *ngFor="let day of routine.days">
           <div class="routine-day-remove" (click)="onClickRemoveDay(day.id)">
             <p><i class="fa fa-times" aria-hidden="true"></i></p>
@@ -95,12 +91,12 @@
             <p><i class="fa fa-plus" aria-hidden="true"></i>Add new workout</p>
           </div>
         </div>
-      </div>
-      <div>
+      </div> 
+       <div>
         <md-input-container style="width:100%">
           <textarea mdInput placeholder="Spotify Playlist URL"></textarea>
         </md-input-container>
-      </div>
+      </div> 
 
       <div id="routine-privacy">
         <md-slide-toggle [(ngModel)]="routine.public">

@@ -86,15 +86,15 @@ export class ExerciseService {
 
   constructor() { }
 
-  getExercise(query): Promise<Exercise>  {
-    const self = this;
-    return new Promise((resolve, reject) => {
-      setTimeout(function () {
-        const exercise = Math.floor(Math.random() * self.exercises.length);
-        resolve(exercise);
-      }, 100);
-    });
-  }
+  // getExercise(query): Promise<Exercise>  {
+  //   const self = this;
+  //   return new Promise((resolve, reject) => {
+  //     setTimeout(function () {
+  //       const exercise = Math.floor(Math.random() * self.exercises.length);
+  //       resolve(exercise);
+  //     }, 100);
+  //   });
+  // }
 
   getExercises(query): Promise<Exercise[]> {
     const self = this;

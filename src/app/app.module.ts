@@ -6,6 +6,8 @@ import { MaterialModule } from "@angular/material";
 import { DragulaModule } from "ng2-dragula";
 import { RouterModule, Routes } from "@angular/router";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import "rxjs/add/operator/switchMap";
 
 // Components [declarations]
 import { AppComponent } from "./app.component";
@@ -25,6 +27,7 @@ import { SearchBarComponent } from "./search-bar/search-bar.component";
 import { RoutineService } from "./services/routine.service";
 import { ExerciseService } from "./services/exercise.service";
 import { InternalService } from "./services/internal.service";
+import { AuthenticationService } from "./services/authentication.service";
 
 // Dialogs [declarations, entryComponents]
 import { AddExerciseComponent } from "./create/add-exercise.dialog";
@@ -65,11 +68,13 @@ const appRoutes: Routes = [
     , MaterialModule
     , DragulaModule
     , FlexLayoutModule
+    , BrowserAnimationsModule
   ],
   providers: [
       RoutineService
     , ExerciseService
     , InternalService
+    , AuthenticationService
   ],
   entryComponents: [
       AddExerciseComponent

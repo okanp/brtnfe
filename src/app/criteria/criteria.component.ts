@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
+import { Component, OnInit, ViewChild, AfterViewInit, HostListener } from "@angular/core";
 import { InternalService } from "../services/internal.service";
+import { Routine } from "../models/routine.model";
 
 @Component({
   moduleId: module.id,
@@ -28,7 +29,12 @@ export class CriteriaComponent implements AfterViewInit {
     {value: "weightlifting", view: "Weightlifting"},
     {value: "crossfit", view: "Crossfit"},
     {value: "bodyweight", view: "Bodyweight"},
-    {value: "dumbbellsonly", view: "Dumbbells-Only (Home)"}
+    {value: "dumbbellsonly", view: "Dumbbells-Only (Home)"},
+    {value: "legs", view: "Split - Legs Only"},
+    {value: "arms", view: "Split - Arms Only"},
+    {value: "chest", view: "Split - Chest Only"},
+    {value: "shoulders", view: "Split - Shoulders Only"},
+    {value: "back", view: "Split - Back Only"}
   ];
 
 
@@ -44,12 +50,24 @@ export class CriteriaComponent implements AfterViewInit {
 
   searchFocussed = false;
 
+  model: Routine;
 
   constructor(private internalService: InternalService) {
     const self = this;
+    self.model = new Routine();
     self.internalService.getFocussed().subscribe( (val) => {
-      self.searchFocussed = val;
+      // self.searchFocussed = val;
     });
+  }
+
+  search() {
+    const self = this;
+    self.internalService.setFocussed(false);
+  }
+
+  cancel() {
+    const self = this;
+    self.internalService.setFocussed(false);
   }
 
   ngAfterViewInit() {

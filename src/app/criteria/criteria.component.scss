@@ -6,8 +6,7 @@ $width-search: 400px;
   background-color: rgb(87, 99, 102);
   border-radius: 2px;
   padding: 12px;
-  position: absolute;
-  z-index: 3;
+  // position: absolute;
 }
 
 .fixed-width{
@@ -19,8 +18,8 @@ $width-search: 400px;
   width: 100%;
 }
 
-.zero-heigth {
-  display: none;
+.zero-height {
+  display: none!important;
 }
 
 .criteria-wrapper {
@@ -51,7 +50,7 @@ $width-search: 400px;
 
 #search-criteria-action{
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 0 12px;
 }
 
